@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/leta/static/css/main.6a9d1ba3.chunk.css",
-    "main.js": "/leta/static/js/main.8ca4c966.chunk.js",
-    "main.js.map": "/leta/static/js/main.8ca4c966.chunk.js.map",
+    "main.css": "/leta/static/css/main.be085207.chunk.css",
+    "main.js": "/leta/static/js/main.110160b4.chunk.js",
+    "main.js.map": "/leta/static/js/main.110160b4.chunk.js.map",
     "runtime-main.js": "/leta/static/js/runtime-main.4ce6d5d9.js",
     "runtime-main.js.map": "/leta/static/js/runtime-main.4ce6d5d9.js.map",
-    "static/js/2.10eedc16.chunk.js": "/leta/static/js/2.10eedc16.chunk.js",
-    "static/js/2.10eedc16.chunk.js.map": "/leta/static/js/2.10eedc16.chunk.js.map",
+    "static/js/2.d083ca90.chunk.js": "/leta/static/js/2.d083ca90.chunk.js",
+    "static/js/2.d083ca90.chunk.js.map": "/leta/static/js/2.d083ca90.chunk.js.map",
     "index.html": "/leta/index.html",
-    "precache-manifest.bd171db7e0fdbfe78cd75b9969a6caec.js": "/leta/precache-manifest.bd171db7e0fdbfe78cd75b9969a6caec.js",
+    "precache-manifest.795502612802c745647158a3ddeb9328.js": "/leta/precache-manifest.795502612802c745647158a3ddeb9328.js",
     "service-worker.js": "/leta/service-worker.js",
-    "static/css/main.6a9d1ba3.chunk.css.map": "/leta/static/css/main.6a9d1ba3.chunk.css.map",
-    "static/js/2.10eedc16.chunk.js.LICENSE.txt": "/leta/static/js/2.10eedc16.chunk.js.LICENSE.txt"
+    "static/css/main.be085207.chunk.css.map": "/leta/static/css/main.be085207.chunk.css.map",
+    "static/js/2.d083ca90.chunk.js.LICENSE.txt": "/leta/static/js/2.d083ca90.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4ce6d5d9.js",
-    "static/js/2.10eedc16.chunk.js",
-    "static/css/main.6a9d1ba3.chunk.css",
-    "static/js/main.8ca4c966.chunk.js"
+    "static/js/2.d083ca90.chunk.js",
+    "static/css/main.be085207.chunk.css",
+    "static/js/main.110160b4.chunk.js"
   ]
 }
