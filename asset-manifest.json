@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/leta/static/css/main.c5376ec0.chunk.css",
-    "main.js": "/leta/static/js/main.9cf2655d.chunk.js",
-    "main.js.map": "/leta/static/js/main.9cf2655d.chunk.js.map",
+    "main.css": "/leta/static/css/main.3379c281.chunk.css",
+    "main.js": "/leta/static/js/main.ec7702a0.chunk.js",
+    "main.js.map": "/leta/static/js/main.ec7702a0.chunk.js.map",
     "runtime-main.js": "/leta/static/js/runtime-main.4ce6d5d9.js",
     "runtime-main.js.map": "/leta/static/js/runtime-main.4ce6d5d9.js.map",
     "static/js/2.af2507ab.chunk.js": "/leta/static/js/2.af2507ab.chunk.js",
     "static/js/2.af2507ab.chunk.js.map": "/leta/static/js/2.af2507ab.chunk.js.map",
     "index.html": "/leta/index.html",
-    "precache-manifest.0d83a36e138ef2cc902d0555c1b28a08.js": "/leta/precache-manifest.0d83a36e138ef2cc902d0555c1b28a08.js",
+    "precache-manifest.592f1a54d3763c03248f862327de34f9.js": "/leta/precache-manifest.592f1a54d3763c03248f862327de34f9.js",
     "service-worker.js": "/leta/service-worker.js",
-    "static/css/main.c5376ec0.chunk.css.map": "/leta/static/css/main.c5376ec0.chunk.css.map",
-    "static/js/2.af2507ab.chunk.js.LICENSE.txt": "/leta/static/js/2.af2507ab.chunk.js.LICENSE.txt"
+    "static/css/main.3379c281.chunk.css.map": "/leta/static/css/main.3379c281.chunk.css.map",
+    "static/js/2.af2507ab.chunk.js.LICENSE.txt": "/leta/static/js/2.af2507ab.chunk.js.LICENSE.txt",
+    "static/media/loader.355c4d66.svg": "/leta/static/media/loader.355c4d66.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4ce6d5d9.js",
     "static/js/2.af2507ab.chunk.js",
-    "static/css/main.c5376ec0.chunk.css",
-    "static/js/main.9cf2655d.chunk.js"
+    "static/css/main.3379c281.chunk.css",
+    "static/js/main.ec7702a0.chunk.js"
   ]
 }
