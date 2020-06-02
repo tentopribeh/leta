@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/leta/static/css/main.6a9d1ba3.chunk.css",
+    "main.js": "/leta/static/js/main.951f0ccf.chunk.js",
+    "main.js.map": "/leta/static/js/main.951f0ccf.chunk.js.map",
+    "runtime-main.js": "/leta/static/js/runtime-main.4ce6d5d9.js",
+    "runtime-main.js.map": "/leta/static/js/runtime-main.4ce6d5d9.js.map",
+    "static/js/2.be50b970.chunk.js": "/leta/static/js/2.be50b970.chunk.js",
+    "static/js/2.be50b970.chunk.js.map": "/leta/static/js/2.be50b970.chunk.js.map",
+    "index.html": "/leta/index.html",
+    "precache-manifest.68a8dec10c956352f44f4f26dd0a8b47.js": "/leta/precache-manifest.68a8dec10c956352f44f4f26dd0a8b47.js",
+    "service-worker.js": "/leta/service-worker.js",
+    "static/css/main.6a9d1ba3.chunk.css.map": "/leta/static/css/main.6a9d1ba3.chunk.css.map",
+    "static/js/2.be50b970.chunk.js.LICENSE.txt": "/leta/static/js/2.be50b970.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ce6d5d9.js",
+    "static/js/2.be50b970.chunk.js",
+    "static/css/main.6a9d1ba3.chunk.css",
+    "static/js/main.951f0ccf.chunk.js"
+  ]
+}
