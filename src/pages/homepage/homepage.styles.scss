@@ -19,20 +19,28 @@
                 width: 300px;
                 display: flex;
                 flex-direction: row;
-                height: 27px;
+                height: 40px;
                 .word {
                     width: 100px;
                     border: 1px solid;
                     text-align: center;
                     padding: 3px;
+
                 }
                 .word-meaning {
                     width: 200px;
                     border: 1px solid;
                     text-align: center;
                     padding: 3px;
-
-
+                    overflow: hidden;
+                    transition: 0.5s ease-out;
+                }
+                .word-meaning:hover {
+                    height: 100px;
+                    background-color: whitesmoke;
+                    z-index: 200;
+                    display: flex;
+                    align-items: center;
                 }
             }
         }

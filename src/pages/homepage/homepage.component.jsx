@@ -3,7 +3,7 @@ import React from 'react';
 import './homepage.styles.scss';
 
 import exampleText from '../../data/default-text';
-
+import {getWordData} from '../../firebase/firebase.utils';
 
 const HomePage = () => {
     const [text, setText] = React.useState(exampleText);
@@ -29,7 +29,7 @@ const HomePage = () => {
         setText(exampleText);
     }
 
-    const chooseWords = textToEdit => {
+    const chooseWords = async textToEdit => {
         textToEdit = textToEdit.toLowerCase();
         textToEdit = textToEdit.replace(/[&\/\\#,+=()$~%.'0-9":;*_?<>{}\n]/g, ' ');
 
@@ -54,16 +54,19 @@ const HomePage = () => {
         const wordsLimit = 20;
 
         // Create items array
-        const items = Object.keys(wordsDictionary).map(function(key) {
-            return [key, wordsDictionary[key]];
-        });
+        const items = await Promise.all(Object.keys(wordsDictionary).map(async function(key) {
+            return [key, wordsDictionary[key], await getWordData(key)]
+        }));
         
         // Sort the array based on the second element
         items.sort(function(first, second) {
             return second[1] - first[1];
         });
 
-        setMostFrequentWords(items.slice(0, wordsLimit))
+        console.log('items')
+        console.log(items)
+
+        await setMostFrequentWords(items.slice(0, wordsLimit))
         
         // Create a new array with only the first 5 items
         console.log(items.slice(0, wordsLimit));
@@ -85,7 +88,7 @@ const HomePage = () => {
             </div>
             <div className='words-list-box'>
                 <div className='words-list'>
-                    {mostFrequentWords.map(word => <div className='word-box' key={word[0]}><div className='word'>{word[0]}</div><div className='word-meaning'>{word[1]}</div></div>)}
+                    {mostFrequentWords.map(word => <div className='word-box' key={word[0]}><div className='word'>{word[0]}</div><div className='word-meaning'>{word[2]}</div></div>)}
                 </div>
             </div>
         </div>
