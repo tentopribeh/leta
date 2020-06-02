@@ -1,4 +1,5 @@
 import React from 'react';
+import wtf from 'wtf_wikipedia';
 
 import './homepage.styles.scss';
 
@@ -54,8 +55,26 @@ const HomePage = () => {
         const wordsLimit = 20;
 
         // Create items array
+        // let str = `# {{Příznaky|cs|zast.|nář.}} [[strýc]] [[z]] [[matčin]]y [[strana|strany]]&lt;ref name=&quot;ssjc6&quot;&gt;Československá akademie věd. Ústav pro jazyk český. ''Slovník spisovného jazyka českého.'' Díl VI. Š-U. Praha: Academia, 1989. Heslo „ujec“, s. 306.&lt;/ref&gt; # {{Příznaky|cs|řidč.}} [[manžel]] [[matčin]]y [[sestra|sestry]]&lt;ref name=&quot;priruc&quot;&gt;Ústav pro jazyk český Československé akademie věd. ''Příruční slovník jazyka českého.'' Díl VI. T-Vůzek. Praha: Státní nakladatelství, 1951-1953. Heslo „ujec“, s. 438, 439.&lt;/ref&gt; # {{Příznaky|cs|nář.}} [[venkovan]], [[soused]]&lt;ref name=&quot;ssjc6&quot;/&gt; # {{Příznaky|cs|nář.}} [[výr]]&lt;ref name=&quot;ssjc6&quot;/&gt; # {{Příznaky|cs|nář.}} [[druh]] [[tlačenka|tlačenky]]&lt;ref name=&quot;priruc&quot;/&gt; # {{Příznaky|cs|nář.}} [[poduška]], [[polštář]]&lt;ref name=&quot;priruc&quot;/&gt; `
+        let str = ``;
+        console.log(wtf(str))
+
+        let doc = await wtf.fetch('https://cs.wiktionary.org/wiki/l%C3%A1ska')
+        console.log(wtf(doc.sections('význam').data.wiki).text())
+        console.log(doc.text())
+        console.log(doc.text())
+        console.log(doc.text())
+        console.log(doc.text())
+
         const items = await Promise.all(Object.keys(wordsDictionary).map(async function(key) {
-            return [key, wordsDictionary[key], await getWordData(key)]
+            const fetchedText = await wtf.fetch(`https://cs.wiktionary.org/wiki/${key}`);
+
+            if(!fetchedText)
+                return [key, wordsDictionary[key], 'brak definicji']
+
+            const meaning = fetchedText.sections('čeština') ? fetchedText.sections('čeština').sections('význam') : fetchedText.sections('význam')
+
+            return [key, wordsDictionary[key], wtf(meaning.data.wiki).text()]// await getWordData(key)]
         }));
         
         // Sort the array based on the second element
@@ -71,6 +90,7 @@ const HomePage = () => {
         // Create a new array with only the first 5 items
         console.log(items.slice(0, wordsLimit));
 
+        console.log("PPPPPP", wtf(str));
         
         return wordsDictionary;
     }

@@ -16,7 +16,7 @@
             width: 80%;
             margin: 10px auto;
             .word-box {
-                width: 300px;
+                width: 500px;
                 display: flex;
                 flex-direction: row;
                 height: 40px;
@@ -28,7 +28,7 @@
 
                 }
                 .word-meaning {
-                    width: 200px;
+                    width: 400px;
                     border: 1px solid;
                     text-align: center;
                     padding: 3px;
@@ -36,7 +36,7 @@
                     transition: 0.5s ease-out;
                 }
                 .word-meaning:hover {
-                    height: 100px;
+                    height: 300px;
                     background-color: whitesmoke;
                     z-index: 200;
                     display: flex;
