@@ -2,9 +2,11 @@ import React from 'react';
 
 import './homepage.styles.scss';
 
+import exampleText from '../../data/default-text';
+
 
 const HomePage = () => {
-    const [text, setText] = React.useState('');
+    const [text, setText] = React.useState(exampleText);
     const [mostFrequentWords, setMostFrequentWords] = React.useState([]);
 
     const handleChange = async event => {
@@ -14,13 +16,22 @@ const HomePage = () => {
 
     const handleSubmit = async event => {
         event.preventDefault();
-        let words = chooseWords(text)
-        console.log(words)
+        await chooseWords(text);
+    }
+
+    const handleClean = async event => {
+        event.preventDefault();
+        setText('');
+    }
+
+    const handleRandom = async event => {
+        event.preventDefault();
+        setText(exampleText);
     }
 
     const chooseWords = textToEdit => {
         textToEdit = textToEdit.toLowerCase();
-        textToEdit = textToEdit.replace(/[&\/\\#,+=()$~%.'0-9":;*_?<>{}]/g, ' ');
+        textToEdit = textToEdit.replace(/[&\/\\#,+=()$~%.'0-9":;*_?<>{}\n]/g, ' ');
 
         let wordsList = textToEdit.split(" ");
 
@@ -66,6 +77,8 @@ const HomePage = () => {
             <div className='text-input-box'>
                 <div>Put text to generate words dictionary.</div>
                 <form onSubmit={handleSubmit}>
+                    <button onClick={handleClean}>Clean</button>
+                    <button onClick={handleRandom}>Put random text</button>
                     <textarea className='text-input' value = {text} onChange = {handleChange}></textarea>
                     <button>Generate</button>
                 </form>
