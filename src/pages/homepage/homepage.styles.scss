@@ -1,56 +1,204 @@
+textarea {
+    font-family: 'Roboto', sans-serif;
+    scrollbar-color: black;
+    font-weight: 100;
+    text-align: center;
+    font-size: 16px;
+}
+
+body {
+    background: white;
+}
+
+.button {
+    background-color: white;
+    color: rgb(98, 98, 98);
+    font-size: 16px;
+    font-weight: 400;
+    transition: ease-out 0.3s;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 0.5px solid black;
+    margin: 10px;
+}
+.button:hover {
+    //background: rgb(255, 248, 249);
+    color: black;
+    font-size: 18px;
+}
+
 .home-page {
     display: flex;
-    justify-content: center;
+    //justify-content: center;
     flex-direction: row;
-    margin: 30px auto;
+    padding: 30px auto;
+    width: 100%;
+
     .text-input-box {
-        width: 40%;
+        padding-left: 40px;
+        width: 45%;
+        font-family: 'Roboto', sans-serif;
+        position: fixed;
+        top:0;
+        right:0;
+        .text-buttons {
+            display: flex;
+            flex-direction: row;
+        }
+        .title {
+            font-family: 'Pacifico', cursive;
+            //font-family: 'Sacramento', cursive;
+            font-family: 'League Script', cursive;
+
+            //font-family: 'Merienda', cursive;
+            margin: 40px;
+        
+            //font-family: 'Open Sans Condensed', sans-serif;
+        
+            //font-family: 'Sacramento', cursive;
+        
+            //font-family: 'Shadows Into Light', cursive;
+            font-family: 'Antic Slab', serif;
+
+        
+            // font-family: 'Cinzel', serif;
+        
+            font-size: 70px;
+            color: rgb(0, 0, 0);
+        }
+        .explanation {
+            font-size: 32px;
+            color: rgb(83, 83, 83);
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Antic Slab', serif;
+
+        }
         .text-input {
-            width: 100%;
-            height: 400px;
+            width: 80%;
+            margin: 30px 50px;
+            height: 200px;
+            border: white;
+            resize: none;
+            overflow: auto;
+            scrollbar-base-color: plum;
+            scrollbar-color: blue;
+            scrollbar-track-color: red;
+            outline: none;
+        }
+        .text-input::-webkit-scrollbar-thumb {
+            background-color: red;
+        }
+        .text-input::-moz-scrollbar-thumb {
+            background-color: red;
+        }        
+        .text-input::-o-scrollbar-thumb {
+            background-color: red;
         }
         .input-number {
             width: 40px;
         }
+        .button-description-down {
+            font-size: 24px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Antic Slab', serif;
+            color: rgb(83, 83, 83);
+
+        }
     }
     .words-list-box {
-        width: 40%;
+        min-height: 100vh;
+        background: rgb(241, 241, 241);
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        top:0;
+        left:0;
+        padding-top: 50px;
+        
+        .blank-info {
+            font-size: 24px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Antic Slab', serif;
+            color: rgb(83, 83, 83);
+
+        }
         .words-list {
-            width: 80%;
-            margin: 10px auto;
+            width: 85%;
             .word-box {
-                width: 500px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 100;
+                width: 85%;
                 display: flex;
                 flex-direction: row;
-                height: 40px;
-                .word {
-                    width: 100px;
-                    border: 1px solid;
-                    text-align: center;
-                    padding: 3px;
+                height: 35px;
+                font-size: 18px;
+                padding: 18px 2px 2px 2px;
+                color: rgb(92, 92, 92);
+                border-top: solid rgb(190, 190, 190) 0.5px;
+                .word-icon{
+                    font-size: 7px;
+                    padding:4px 2px 2px 2px;
+                    margin-right: 10px;
+                }
+                .pink {
+                    color: rgb(255, 162, 178);
+                    color: #d2d2cb;
+                }
+                .peach {
+                    color: rgb(253, 187, 143);
+                    color: #4d695d;
+                }
+                .millenial {
+                    color: rgb(246, 186, 190);
+                    color: #83a79d;
+                }
+                .yellow {
+                    color: rgb(255, 253, 109);
+                    color:#dae8e5;
+                }
+                .mint {
+                    color: rgb(129, 255, 207);
+                    color:#30b0e0;
+                }
+                .beige {
+                    color: rgb(255, 222, 115);
+                    color:#a1cde5;
+                }
 
+                .blue {
+                    color: #bfdeee;
+                }
+
+                .blue2 {
+                    color:#bc252d;
+                }
+                // .word {
+                //     text-align: center;
+                // }
+                .word-number {
+                    vertical-align: baseline;
+                    font-size: 12px;
                 }
                 .word-meaning {
-                    width: 400px;
-                    border: 1px solid;
-                    text-align: center;
-                    padding: 3px;
                     overflow: hidden;
-                    transition: 0.5s ease-out;
                 }
-                .word-meaning:hover {
-                    height: 300px;
-                    background-color: whitesmoke;
-                    z-index: 200;
-                    display: flex;
-                    align-items: center;
-                    white-space: pre-wrap;
+                // .word-meaning:hover {
+                //     height: 300px;
+                //     background-color: whitesmoke;
+                //     z-index: 200;
+                //     display: flex;
+                //     align-items: center;
+                //     white-space: pre-wrap;
 
-                }
+                // }
+            }
+            .word-box:hover {
+                color: black;
+                font-weight: 400;
             }
         }
     }

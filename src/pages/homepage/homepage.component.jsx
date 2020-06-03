@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React from 'react';
 
 import wtf from 'wtf_wikipedia';
@@ -19,9 +21,10 @@ const HomePage = () => {
     moja tę­sk­no­ta jest tę­sk­no­tą pla­net
     zmar­z­łych tę­sk­nią­cych do słoń­ca
     jest zno­wu wie­czór
-    na da­chach blask księżyca lśni
+    po dachach ślizga się blask księżyca
     wą­skie wie­że ko­ścio­łów na­kłu­wa­ją nie­bo
     i dni tak lek­ko bie­gną nie wia­do­mo gdzie `)
+    console.log(`<3`)
     console.log('%c ', 'font-size:1px; padding: 100px 150px; background:url(https://66.media.tumblr.com/36584c3bb4ad641e9060ced5756c85d2/tumblr_pi2opgP0Tw1u8pg83o1_640.png) no-repeat; background-size: contain;');
 
     const WORDS_LIMIT_MAX = 100;
@@ -102,6 +105,7 @@ const HomePage = () => {
             let meaningText = await wtf(meaning.data.wiki).text();
             while(meaningText.indexOf('*') !== -1) {
                 meaningText = meaningText.replace('*', '\n');
+                meaningText = meaningText.replace(/[0-9]\)/, ' \n ')
             }
             return [item[0], item[1], meaningText ]// await getWordData(key)]
         }));
@@ -113,32 +117,48 @@ const HomePage = () => {
         
         return wordsDictionary;
     }
+
+    const colors = ['pink', 'peach', 'millenial', 'yellow', 'mint', 'beige', 'blue', 'blue2' ];
     
     return(
         <div className='home-page'>
-            <div className='text-input-box'>
-                <div className='title'>Book to dictionary</div>
-                <div className='explanation'>Put text to generate words dictionary.</div>
-                <form onSubmit={handleSubmit}>
-                    <button onClick={handleClean}>Clean</button>
-                    <button onClick={handleRandom}>Put random text</button>
-                    <textarea className='text-input' value = {text} onChange = {handleChange}></textarea>
-                    <br/>
-                    How many words would you like to see? (max 100): 
-                    <input className="input-number" value={wordsLimit} name="wordsLimit" label="Words limit" type="number" min="0"  max="100" onChange={handlePagination}></input>
-                    <br/>
-                    Set offset: 
-                    <input className="input-number" value={wordsOffset} name="wordsOffset" label="Words offset" type="number" onChange={handlePagination} min="0" max="1000000"></input>
-                    <br/>
-                    <button>Generate</button>
-                </form>
-            </div>
+
             <div className='words-list-box'>
                 {(mostFrequentWords.length === 0 && loadingStarted) &&  <Logo className="loader" /> }
-                {(mostFrequentWords.length === 0 && !loadingStarted) &&  "Click 'Generate' to create a dictionary" }
+                {(mostFrequentWords.length === 0 && !loadingStarted) &&  <div>
+                    <div className='blank-info'>Click generate to create a dictionary</div>
+                    </div> }
                 <div className='words-list'>
-                    {mostFrequentWords.map(word => <div className='word-box' key={word[0]}><div className='word'>{word[0]}</div><div className='word-meaning'>{word[2]}</div></div>)}
+                    {mostFrequentWords.map(word => {
+                        const index =  parseInt(Math.random() * colors.length, 10)
+                        const additionalStyle = colors[index];
+                        return(
+                        <div className='word-box' key={word[0]}>
+                            <div className='word-icon'><FontAwesomeIcon className={`${additionalStyle}`} icon={['fas', 'circle']} /></div>
+                            <div className='word'>{word[0]}</div>
+                            <div className='word-number'>&nbsp;&nbsp;{word[1]}</div>
+                            <div className='word-meaning'>, {word[2].slice(0,60)}...</div></div>)
+                        })}
                 </div>
+            </div>
+            <div className='text-input-box'>
+                <div className='title'>Tento zpusob</div>
+                <div className='explanation'>Paste text below and change it into book specific dictionary</div>
+                <form onSubmit={handleSubmit}>
+                    <div className="text-buttons">
+                        <button className="button" onClick={handleClean}>Clean</button>
+                        <button className="button" onClick={handleRandom}>Put random text</button>
+                    </div>
+                    <textarea className='text-input' placeholder="Paste here your text" value = {text} onChange = {handleChange}></textarea>
+                    <br/>
+                    <span className="button-description-down">How many translations would you like to generate? (max 100): </span>
+                    <input className="input-number" value={wordsLimit} name="wordsLimit" label="Words limit" type="number" min="0"  max="100" onChange={handlePagination}></input>
+                    <br/>
+                    <span className="button-description-down">Set offset: </span>
+                    <input className="input-number" value={wordsOffset} name="wordsOffset" label="Words offset" type="number" onChange={handlePagination} min="0" max="1000000"></input>
+                    <br/>
+                    <button className="button">Generate</button>
+                </form>
             </div>
         </div>
     )
