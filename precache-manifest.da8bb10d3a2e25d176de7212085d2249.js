@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc4d7c9bceefd50262581077a86e3223",
+    "revision": "2abd388109996e3371edaa2cefd10b45",
     "url": "/leta/index.html"
   },
   {
-    "revision": "c53d13fcf920e2922ff8",
-    "url": "/leta/static/css/main.3379c281.chunk.css"
+    "revision": "7393318daa0ee72c380d",
+    "url": "/leta/static/css/main.20df054e.chunk.css"
   },
   {
-    "revision": "286711000445f8bc66bf",
-    "url": "/leta/static/js/2.af2507ab.chunk.js"
+    "revision": "facfe15470fbc6d7d74e",
+    "url": "/leta/static/js/2.4934feaa.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/leta/static/js/2.af2507ab.chunk.js.LICENSE.txt"
+    "url": "/leta/static/js/2.4934feaa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c53d13fcf920e2922ff8",
-    "url": "/leta/static/js/main.ec7702a0.chunk.js"
+    "revision": "7393318daa0ee72c380d",
+    "url": "/leta/static/js/main.3fd90eaa.chunk.js"
   },
   {
     "revision": "03b10ff2517fa7ab8d81",
